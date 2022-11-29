@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0px;
   padding: 0px;
@@ -24,20 +25,12 @@ body button {
   border-radius: 10px;
   font-size: 0.9rem;
   padding: 0.3rem;
-  transition: 0.4s;
-  width: 60%; }
+  transition: 0.4s; }
   body button:hover {
     color: white;
     box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
     -webkit-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
     -moz-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22); }
-
-.itemListContainer {
-  background-color: antiquewhite;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
 
 .cartWidget {
   padding-right: 3rem;
@@ -71,3 +64,23 @@ header {
         background-color: #70b9c6;
         margin-left: 2rem;
         margin-right: 2rem; }
+
+.itemCount {
+  background-color: #e9e9e9;
+  width: 15rem;
+  height: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column; }
+  .itemCount .itemCountAdd {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0 2rem 0; }
+    .itemCount .itemCountAdd button {
+      width: 1.4rem;
+      height: 1.4rem;
+      padding: 0; }
+  .itemCount .btnAñadir {
+    margin-bottom: 1rem;
+    align-self: center;
+    width: 100%; }

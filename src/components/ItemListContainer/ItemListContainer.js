@@ -1,9 +1,13 @@
+import ItemCount from "../ItemCount/ItemCount";
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
     return (
         <main>
             <div className="itemListContainer">
-                <p>{props.mensaje}</p>
+                <ItemCount
+                title="Item título"
+                initial={1}
+                stock={5}/>
             </div>
         </main>
     )
