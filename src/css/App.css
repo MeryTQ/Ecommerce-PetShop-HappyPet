@@ -1,0 +1,73 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+body h3 {
+  font-family: "Rubik";
+  font-size: 0.9rem;
+  font-weight: bolder;
+  text-align: center; }
+
+body a {
+  font-family: "Mali"; }
+
+body p {
+  font-family: "Quicksand";
+  text-align: center;
+  margin: 0; }
+
+body button {
+  font-family: "Rubik";
+  border: none;
+  background-color: #70b9c6;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  transition: 0.4s;
+  width: 60%; }
+  body button:hover {
+    color: white;
+    box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
+    -webkit-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
+    -moz-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22); }
+
+.itemListContainer {
+  background-color: antiquewhite;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.cartWidget {
+  padding-right: 3rem;
+  display: flex;
+  align-items: center; }
+  .cartWidget p {
+    background-color: antiquewhite;
+    border-radius: 15px;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-weight: 800; }
+
+header {
+  background-color: #70b9c6;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  padding: 0.5rem; }
+  header .logoNavBar {
+    padding-left: 3rem; }
+    header .logoNavBar img {
+      width: 260px; }
+  header .navBarContainer {
+    padding: 0; }
+    header .navBarContainer .navBar {
+      background-color: #70b9c6;
+      width: auto; }
+      header .navBarContainer .navBar a {
+        color: #62442F;
+        background-color: #70b9c6;
+        margin-left: 2rem;
+        margin-right: 2rem; }

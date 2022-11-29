@@ -1,0 +1,26 @@
+header{
+    background-color: #70b9c6;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    padding: 0.5rem;
+    .logoNavBar{
+        padding-left: 3rem;
+        img{
+            width: 260px;
+        }
+    }
+    .navBarContainer{
+        padding: 0;
+        .navBar{
+            background-color: #70b9c6;
+            width: auto;
+            a{
+                color: #62442F;
+                background-color: #70b9c6;
+                margin-left: 2rem; margin-right: 2rem;
+            }
+        }
+    }
+}
