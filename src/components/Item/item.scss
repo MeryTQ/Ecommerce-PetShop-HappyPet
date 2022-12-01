@@ -1,0 +1,24 @@
+.item{
+    background-color: rgb(255, 255, 255);
+    width: 16rem; height: 20rem;
+    padding: 1rem; margin: 1rem;
+    display: grid;
+    border-radius: 10px;
+    justify-items: center;
+    box-shadow: 1px 1px 16px 2px rgba(34,35,37,0.22);
+    -webkit-box-shadow: 1px 1px 16px 2px rgba(34,35,37,0.22);
+    -moz-box-shadow: 1px 1px 16px 2px rgba(34,35,37,0.22);
+    .itemImg{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 12rem;
+        img{
+            width: 7rem;
+        }
+    }
+    button{
+        margin-top: 0.5rem;
+        width: 80%;
+    }
+}

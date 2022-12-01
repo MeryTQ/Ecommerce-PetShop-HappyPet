@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function ItemCount({ stock, initial, onAdd, onDecrement}) {
+function ItemCount({ stock, initial = 1, onAdd, onDecrement}) {
     const [count, setCount] = useState(initial);
 
     onAdd = () => {  // Incrementar items //
@@ -13,7 +13,6 @@ function ItemCount({ stock, initial, onAdd, onDecrement}) {
 
     return (
         <div className="itemCount">
-            <h3>Item título</h3>
             <div className="itemCountAdd">
                 <button onClick={onDecrement} disabled={count === 1}>-</button>
                 <p>{count}</p>

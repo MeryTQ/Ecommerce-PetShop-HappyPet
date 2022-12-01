@@ -7,8 +7,8 @@
 body h3 {
   font-family: "Rubik";
   font-size: 0.9rem;
-  font-weight: bolder;
-  text-align: center; }
+  text-align: center;
+  font-weight: bolder; }
 
 body a {
   font-family: "Mali"; }
@@ -32,16 +32,10 @@ body button {
     -webkit-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
     -moz-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22); }
 
-.cartWidget {
-  padding-right: 3rem;
-  display: flex;
-  align-items: center; }
-  .cartWidget p {
-    background-color: antiquewhite;
-    border-radius: 15px;
-    width: 1.5rem;
-    height: 1.5rem;
-    font-weight: 800; }
+.spinner {
+  position: absolute;
+  align-self: center;
+  justify-self: center; }
 
 header {
   background-color: #70b9c6;
@@ -65,11 +59,75 @@ header {
         margin-left: 2rem;
         margin-right: 2rem; }
 
+.cartWidget {
+  padding-right: 3rem;
+  display: flex;
+  align-items: center; }
+  .cartWidget p {
+    background-color: antiquewhite;
+    border-radius: 15px;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-weight: 800; }
+
+main .itemListContainer {
+  background-color: #f1f1f1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  padding: 2rem 5rem 2rem 5rem;
+  height: 100vh; }
+
+.item {
+  background-color: white;
+  width: 16rem;
+  height: 20rem;
+  padding: 1rem;
+  margin: 1rem;
+  display: grid;
+  border-radius: 10px;
+  justify-items: center;
+  box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
+  -webkit-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
+  -moz-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22); }
+  .item .itemImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12rem; }
+    .item .itemImg img {
+      width: 7rem; }
+  .item button {
+    margin-top: 0.5rem;
+    width: 80%; }
+
+.itemDetail {
+  background-color: white;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
+  -webkit-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
+  -moz-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
+  border-radius: 10px;
+  padding: 1rem; }
+  .itemDetail .itemDetailImg {
+    display: flex;
+    justify-content: center;
+    border-right: 1px solid gainsboro; }
+    .itemDetail .itemDetailImg img {
+      width: 13rem; }
+  .itemDetail .itemDetailDescription {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .itemDetail .itemDetailDescription h3 {
+      font-size: 1.2rem; }
+
 .itemCount {
-  background-color: #e9e9e9;
   width: 15rem;
   height: auto;
-  padding: 1rem;
   display: flex;
   flex-direction: column; }
   .itemCount .itemCountAdd {
@@ -84,3 +142,9 @@ header {
     margin-bottom: 1rem;
     align-self: center;
     width: 100%; }
+
+.itemDetailContainer {
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10rem; }

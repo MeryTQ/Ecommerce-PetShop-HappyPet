@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from '../CartWidget/CartWidget';
 import Logo from '../../assets/Logo.png'
 
-const ColorSchemesExample = () => {
+const NavBar = () => {
   return (
     <header>
       <div className='logoNavBar'>
@@ -13,10 +13,10 @@ const ColorSchemesExample = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className='navBar'>
-          <Nav.Link href="#">Home</Nav.Link>
-          <Nav.Link href="#">Perros</Nav.Link>
-          <Nav.Link href="#">Gatos</Nav.Link>
-          <Nav.Link href="#">Accesorios</Nav.Link>
+          <Nav.Link>Home</Nav.Link>
+          <Nav.Link>Perros</Nav.Link>
+          <Nav.Link>Gatos</Nav.Link> 
+          <Nav.Link href="#">Accesorios</Nav.Link> 
         </Nav>
       </Navbar.Collapse>
       </Navbar>
@@ -25,4 +25,4 @@ const ColorSchemesExample = () => {
   )
 }
 
-export default ColorSchemesExample;
+export default NavBar;

@@ -1,7 +1,10 @@
 main{
     .itemListContainer{
         background-color: rgb(241, 241, 241);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         justify-items: center;
         padding: 2rem 5rem 2rem 5rem;
+        height: 100vh;
     }
 }
