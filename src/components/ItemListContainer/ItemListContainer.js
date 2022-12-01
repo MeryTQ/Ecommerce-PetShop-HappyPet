@@ -3,6 +3,7 @@ import { data } from '../../utils/data';
 import { customFetch } from '../../utils/customFetch';
 import SpinnerB from '../Spinner/SpinnerB';
 import ItemList from '../ItemList/ItemList';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
