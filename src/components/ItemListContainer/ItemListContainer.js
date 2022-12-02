@@ -8,13 +8,21 @@ import { useParams } from 'react-router-dom';
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { categoryId } = useParams();
 
     useEffect(() => {
-        customFetch(1000, data)
-        .then(result => setDatos(result))
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false));
-    }, []);
+        if (categoryId) {
+            customFetch(1000, data.filter(item => item.category === categoryId))
+            .then(result => setDatos(result))
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false));
+        } else {
+            customFetch(1000, data)
+            .then(result => setDatos(result))
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false));
+        }
+    }, [categoryId]);
 
     return (
         <main>

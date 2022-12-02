@@ -4,36 +4,45 @@
   padding: 0px;
   box-sizing: border-box; }
 
-body h3 {
-  font-family: "Rubik";
-  font-size: 0.9rem;
-  text-align: center;
-  font-weight: bolder; }
+body {
+  height: 100vh; }
+  body h3 {
+    font-family: "Rubik";
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: bolder;
+    margin: 0; }
+  body a {
+    font-family: "Mali"; }
+  body p {
+    font-family: "Quicksand";
+    text-align: center;
+    margin: 0; }
+  body button {
+    font-family: "Rubik";
+    border: none;
+    background-color: #70b9c6;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    transition: 0.4s; }
+    body button:hover {
+      color: white;
+      box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
+      -webkit-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
+      -moz-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22); }
 
-body a {
-  font-family: "Mali"; }
+#root {
+  background-color: #f1f1f1;
+  height: auto; }
 
-body p {
-  font-family: "Quicksand";
-  text-align: center;
-  margin: 0; }
-
-body button {
-  font-family: "Rubik";
-  border: none;
-  background-color: #70b9c6;
-  border-radius: 10px;
-  font-size: 0.9rem;
-  padding: 0.3rem;
-  transition: 0.4s; }
-  body button:hover {
-    color: white;
-    box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
-    -webkit-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
-    -moz-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22); }
+main {
+  background-color: #f1f1f1;
+  height: 100vh; }
 
 .spinner {
   position: absolute;
+  top: 50%;
   align-self: center;
   justify-self: center; }
 
@@ -57,7 +66,8 @@ header {
         color: #62442F;
         background-color: #70b9c6;
         margin-left: 2rem;
-        margin-right: 2rem; }
+        margin-right: 2rem;
+        text-decoration: none; }
 
 .cartWidget {
   padding-right: 3rem;
@@ -70,13 +80,14 @@ header {
     height: 1.5rem;
     font-weight: 800; }
 
-main .itemListContainer {
+.itemListContainer {
   background-color: #f1f1f1;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding: 2rem 5rem 2rem 5rem;
-  height: 100vh; }
+  height: auto; }
 
 .item {
   background-color: white;
@@ -97,37 +108,39 @@ main .itemListContainer {
     height: 12rem; }
     .item .itemImg img {
       width: 7rem; }
-  .item button {
+  .item .itemBtn {
     margin-top: 0.5rem;
-    width: 80%; }
+    width: 6rem; }
 
 .itemDetail {
   background-color: white;
-  width: 50%;
+  width: 60rem;
+  height: 30rem;
   display: grid;
-  grid-template-columns: 0.8fr 1fr;
+  grid-template-columns: 1fr 1fr;
   box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
   -webkit-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
   -moz-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
   border-radius: 10px;
   padding: 1rem; }
   .itemDetail .itemDetailImg {
-    display: flex;
+    border-right: 1px solid gainsboro;
+    display: grid;
     justify-content: center;
-    border-right: 1px solid gainsboro; }
-    .itemDetail .itemDetailImg img {
-      width: 13rem; }
+    align-items: center; }
   .itemDetail .itemDetailDescription {
     padding: 1rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    justify-content: space-evenly; }
     .itemDetail .itemDetailDescription h3 {
-      font-size: 1.2rem; }
+      font-size: 1.2rem;
+      padding-bottom: 0.5rem; }
 
 .itemCount {
   width: 15rem;
-  height: auto;
   display: flex;
   flex-direction: column; }
   .itemCount .itemCountAdd {
@@ -144,7 +157,7 @@ main .itemListContainer {
     width: 100%; }
 
 .itemDetailContainer {
-  background-color: #f1f1f1;
+  height: 92vh;
   display: flex;
   justify-content: center;
-  padding-bottom: 10rem; }
+  align-items: center; }

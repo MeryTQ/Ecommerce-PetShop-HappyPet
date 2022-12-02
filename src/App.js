@@ -7,10 +7,14 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 
 const App = () => {
   return (
-    <div>
-      <ItemListContainer/>
-      <ItemDetailContainer/>
-      </div>
+    <BrowserRouter>
+      <NavBar/>
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>} />
+        <Route path='/category/:categoryId' element={<ItemListContainer/>} />
+        <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
+      </Routes>
+      </BrowserRouter>
   )
 }
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Item = (item) => {
     return (
@@ -7,7 +8,7 @@ const Item = (item) => {
                 <img src={item.pictureUrl} alt={item.title}/> 
             </div> 
             <p>{item.price} $</p>
-            <button>{item.info}</button>
+            <Link to={`/item/${item.id}`}> <button className="itemBtn">Detalles</button> </Link>
         </div>
     )
 }

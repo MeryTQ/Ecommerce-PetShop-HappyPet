@@ -10,6 +10,7 @@ body{
         font-size: 0.9rem;
         text-align: center;
         font-weight: bolder;
+        margin: 0;
     }
     a{
         font-family: "Mali";
@@ -34,4 +35,13 @@ body{
             -moz-box-shadow: 1px 1px 16px 2px rgba(34,35,37,0.22);
         }
     }
+    height: 100vh;
+}
+#root{
+    background-color: rgb(241, 241, 241);
+    height: auto;
+}
+main{
+    background-color: rgb(241, 241, 241);
+    height: 100vh;
 }
