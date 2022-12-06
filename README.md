@@ -37,14 +37,21 @@ De no haber stock el click no debe tener efecto y por ende no ejecutar el callba
     * Catálogo.  
     * Detalle de producto.
 * Rutas a configurar:
-    * ‘/’ navega a <ItemListContainer />
-    * ‘/category/:id’  <ItemListContainer />
-    * ‘/item/:id’ navega a <ItemDetailContainer />
+    * ‘/’ navega a `<ItemListContainer />`
+    * ‘/category/:categoryId’ navega a `<ItemListContainer />`
+    * ‘/item/:itemId’ navega a `<ItemDetailContainer />`
 * Links a configurar:
     * Clickear en el brand debe navegar a ‘/’
     * Clickear un Item.js debe navegar a /item/:id
     * Clickear en una categoría del navbar debe navegar a /category/:categoryId 
 * Para finalizar deberá integrar los parámetros de tus async-mocks para reaccionar a :itemId y :categoryId ¡utilizando efectos y los hooks de parámetros que vimos en clase.
+
+### **🚨Actividad 4: Sincronizar Counter🚨**
+* Importa el ItemCount.js de la primera pre-entrega del PF en el counter ItemDetail.js, y configura el evento de compra, siguiendo los detalles de manual.
+* Debes lograr separar la responsabilidad del count, del detalle del ítem, y esperar los eventos de agregado emitidos por el ItemCount 
+* Cuando ItemCount emita un evento onAdd almacenarás ese valor en un estado interno del ItemDetail para hacer desaparecer el ItemCount
+* El botón de terminar mi compra debe poder navegar a un componente vacío por el momento en la ruta `‘/cart’`.
+
 
 
 

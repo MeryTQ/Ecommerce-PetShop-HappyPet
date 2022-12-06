@@ -156,6 +156,16 @@ header {
     align-self: center;
     width: 100%; }
 
+.included {
+  width: 15rem;
+  padding: 1.5rem; }
+  .included .includedBtn {
+    display: grid;
+    grid-row-gap: 1rem;
+    padding-top: 1rem; }
+    .included .includedBtn button {
+      width: 100%; }
+
 .itemDetailContainer {
   height: 92vh;
   display: flex;

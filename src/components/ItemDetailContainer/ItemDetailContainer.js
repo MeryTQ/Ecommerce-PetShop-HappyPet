@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
         .then(response => setItem(response))
         .catch(err => console.log(err))
         .finally(() => setLoading(false));
-    }, []);
+    }, [itemId]);
     
     return (
         <main>
