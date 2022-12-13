@@ -52,6 +52,11 @@ De no haber stock el click no debe tener efecto y por ende no ejecutar el callba
 * Cuando ItemCount emita un evento onAdd almacenarás ese valor en un estado interno del ItemDetail para hacer desaparecer el ItemCount
 * El botón de terminar mi compra debe poder navegar a un componente vacío por el momento en la ruta `‘/cart’`.
 
-
-
-
+### **🚨Actividad 5: Cart Context🚨**
+* Implementa React Context para mantener el estado de compra del user.
+* Al clickear comprar en ItemDetail se debe guardar en el CartContext el producto y su cantidad en forma de objeto { name, price, quantity, etc. } dentro del array de productos agregados.
+* Detalle importante: CartContext debe tener la lógica incorporada de no aceptar duplicados y mantener su consistencia.
+* Métodos recomendados: 
+    * `addItem(item, quantity)` // agregar cierta cantidad de un ítem al carrito
+    * `removeItem(itemId)` // Remover un item del cart por usando su id
+    * `removeList()` // Remover todos los items

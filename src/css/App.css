@@ -5,7 +5,15 @@
   box-sizing: border-box; }
 
 body {
-  height: 100vh; }
+  background-color: #70b9c6; }
+  body h1 {
+    font-family: "Quicksand";
+    padding: 2rem;
+    text-align: center; }
+  body h2 {
+    font-family: "Rubik";
+    font-size: 1.3rem;
+    font-weight: bolder; }
   body h3 {
     font-family: "Rubik";
     font-size: 0.9rem;
@@ -31,10 +39,6 @@ body {
       box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
       -webkit-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
       -moz-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22); }
-
-#root {
-  background-color: #f1f1f1;
-  height: auto; }
 
 main {
   background-color: #f1f1f1;
@@ -73,6 +77,8 @@ header {
   padding-right: 3rem;
   display: flex;
   align-items: center; }
+  .cartWidget a {
+    color: #212529; }
   .cartWidget p {
     background-color: antiquewhite;
     border-radius: 15px;
@@ -171,3 +177,37 @@ header {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+.cart {
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  column-gap: 7rem; }
+  .cart .cartList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    justify-self: center;
+    width: 50rem;
+    padding: 1rem;
+    margin: 0;
+    border-bottom: 1px solid silver; }
+    .cart .cartList img {
+      width: 4rem; }
+    .cart .cartList button {
+      border-radius: 15px;
+      width: 1.5rem;
+      height: 1.5rem;
+      padding: 0;
+      font-weight: bolder; }
+  .cart .cartTotal {
+    padding-top: 2.5rem; }
+    .cart .cartTotal p {
+      text-align: start;
+      padding-bottom: 0.5rem; }
+    .cart .cartTotal h2 {
+      border-bottom: 1px solid silver; }
+  .cart .btnClear {
+    margin-top: 2rem;
+    background-color: #ee5d5d; }
