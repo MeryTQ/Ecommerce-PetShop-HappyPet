@@ -24,7 +24,7 @@ export const fetchFirebaseItem = async(itemId) => {
     if (docSnap.exists()) {
       return {
         id: itemId,
-        ... docSnap.data()
+        ...docSnap.data()
       }
     } else {
       console.log("No such document!");

@@ -1,51 +1,52 @@
-main{
-    .yourCart{
-        padding-top: 4rem;
-    }
-    .cart{
-        background-color: rgb(241, 241, 241);
+.yourCart{
+    padding-top: 4rem;
+}
+.cart{
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    justify-content: center; 
+    column-gap: 7rem;
+    .cartEmpty{
         display: flex;
-        justify-content: center; 
-        column-gap: 7rem;
-        .cartEmpty{
-            display: flex;
-            flex-direction: column;
-            button{
-            margin-top: 2rem;
-            width: 100%;
-            }
+        flex-direction: column;
+        button{
+        margin-top: 2rem;
+        width: 100%;
         }
-        .cartList{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            align-items: center; justify-items: center; 
-            justify-self: center;
-            width: 50rem;
-            padding: 1rem; margin: 0;
+    }
+    .cartList{
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        align-items: center; justify-items: center; 
+        justify-self: center;
+        width: 50rem;
+        padding: 1rem; margin: 0;
+        border-bottom: 1px solid silver;
+        img{
+            width: 4rem;
+        }
+        button{
+            border-radius: 15px;
+            width: 1.5rem; height: 1.5rem; 
+            padding: 0;
+            font-weight: bolder;
+        }
+    }
+    .cartTotal{
+        padding: 2rem;
+        p{
+            text-align: start;
+            padding-bottom: 0.5rem;
+        }
+        h2{
             border-bottom: 1px solid silver;
-            img{
-                width: 4rem;
-            }
-            button{
-                border-radius: 15px;
-                width: 1.5rem; height: 1.5rem; 
-                padding: 0;
-                font-weight: bolder;
-            }
         }
-        .cartTotal{
-            padding-top: 2.5rem;
-            p{
-                text-align: start;
-                padding-bottom: 0.5rem;
-            }
-            h2{
-                border-bottom: 1px solid silver;
-            }
+        button{
+            margin-top: 1rem;
         }
-        .btnClear{
-            margin-top: 2rem;
-            background-color: rgb(238, 93, 93);
-        }
+    }
+    .btnClear{
+        margin-top: 2rem;
+        background-color: rgb(238, 93, 93);
     }
 }

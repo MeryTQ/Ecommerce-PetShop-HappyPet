@@ -4,11 +4,17 @@
     box-sizing: border-box;
 }
 
+html{
+
+    min-height: 100vh;
+}
+
+
 body{
-    background-color: #70b9c6;
     h1{
         font-family: "Quicksand";
         text-align: center;
+        margin: 0;
     }
     h2{
         font-family: "Rubik";
@@ -48,5 +54,6 @@ body{
 }
 main{
     background-color: rgb(241, 241, 241);
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
 }

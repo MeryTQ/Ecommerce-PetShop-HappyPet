@@ -4,7 +4,8 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
-import CartContextProvider, { CartContext } from './components/CartContext/CartContext';
+import CartContextProvider from './components/CartContext/CartContext';
+import Footer from './components/Footer/Footer';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
           <Route path='/cart' element={<Cart/>} />
       </Routes>
+      <Footer/>
       </BrowserRouter>
     </CartContextProvider>
   )

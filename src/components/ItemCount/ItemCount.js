@@ -10,17 +10,6 @@ function ItemCount({ stock, initial = 1, onAdd, increment, decrement}) {
     decrement = () => { // Decrementar items //
         setCount(count - 1);
     }
-    
-    // addToCart = () => {
-    //     let itemCount = document.querySelector(".itemCount");
-    //     itemCount.innerHTML = `
-    //     <strong><p>Producto añadido!</p></strong>
-    //     <div class="includedBtn">
-    //         <button>Seguir comprando</button>
-    //         <button>Ver mi carrito</button>
-    //     </div>`
-    //     itemCount.className = "included";
-    // }
 
     return (
         <div className="itemCount">

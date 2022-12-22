@@ -100,11 +100,34 @@ lugar un botón que diga “Terminar mi compra”.
     ``` 
     * `calcItemsQty()` es una función global del contexto que retorna la cantidad de items en el carrito
 
-## **🚨Actividad 7: Firebase 1🚨**
+### **🚨Actividad 7: Firebase 1🚨**
 * Conecta tu nueva ItemCollection de google Firestore a tu ItemListContainer y ItemDetailContainer.
 * Conecta tu colección de firestore con el listado de ítems y con el detalle de ítem.
 * Elimina los async mocks (promises) y reemplazalos por los llamados de Firestore.
 * Si navegas a /item/:id, debe ocurrir una consulta de (1) documento. 
 * Si navegas al catálogo, debes consultar (N) documentos con un query filtrado, implementando la lógica de categorías y obteniendo el id de categoría del parámetro de react-router :categoryId.
+
+### **🚨Actividad 8: Firebase 2🚨**
+* Crea tu colección de órdenes.
+* Utiliza las operaciones de inserción para insertar tu orden en la colección y dale al user su id de orden auto-generada.
+* Crea los mappings para poder grabar un objeto del formato:
+    ```javascript
+    { buyer: { name, phone, email }, items: [{id, title, quantity, price}], date, total }
+    ```
+* Crea el objeto ORDER con la información solicitada:
+    ```javascript
+    let order = {
+      buyer: {
+        name: "An Ecommerce Client",
+        email: "client@coderhouse.com",
+        phone: "123456789"
+      },
+      total: //utiliza una función global para calcular el importe total de la orden
+      items: //mapea tu carrito para agregar aquí solo los datos solicitados de cada producto
+      date: serverTimestamp()	//método de firebase para asignar la fecha y hora del servidor
+    };
+    ```
+* Luego deberás crear una función que agregue ese objeto a un documento en una collección ORDERS.
+
 
 

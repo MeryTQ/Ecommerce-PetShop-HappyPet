@@ -3,16 +3,22 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../CartContext/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetail = (item) => {
     const [itemCount, setItemCount] = useState(0);
     const { addToCart } = useContext(CartContext);
 
+    const notify = () => toast(`Añadiste ${item.title} 🤩`);
+
     const onAdd = (qty) => {
-        alert(`Añadiste ${qty} items`);
+        notify();
         setItemCount(qty);
         addToCart(item, qty);
     }
+
     return (
         <div className="itemDetail">
             <div className="itemDetailImg">
@@ -29,7 +35,7 @@ const ItemDetail = (item) => {
                 <div>
                     {
                         itemCount === 0
-                        ? <ItemCount stock={item.stock} onAdd={onAdd}/>
+                        ? <ItemCount stock={item.stock} onAdd={onAdd}/> 
                         : <div className='included'>
                             <strong><p>Producto añadido!</p></strong>
                             <div className='includedBtn'>
@@ -40,6 +46,18 @@ const ItemDetail = (item) => {
                     }
                 </div>
             </div>
+            <ToastContainer
+                position="bottom-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover={false}
+                theme="light"
+            />
         </div>
     )
 }

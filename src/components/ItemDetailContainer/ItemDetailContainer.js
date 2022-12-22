@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// import { data } from '../../utils/data';
-// import { customFetch } from '../../utils/customFetch';
 import SpinnerB from '../Spinner/SpinnerB';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { fetchFirebaseItem } from '../../utils/fetchFirebase';
