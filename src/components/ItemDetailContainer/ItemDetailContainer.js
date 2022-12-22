@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { data } from '../../utils/data';
-import { customFetch } from '../../utils/customFetch';
+// import { data } from '../../utils/data';
+// import { customFetch } from '../../utils/customFetch';
 import SpinnerB from '../Spinner/SpinnerB';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { fetchFirebaseItem } from '../../utils/fetchFirebase';
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState([]);
@@ -11,10 +12,11 @@ const ItemDetailContainer = () => {
     const { itemId } = useParams();
 
     useEffect(() => {
-        customFetch(0, data.find(i => i.id === itemId))
-        .then(response => setItem(response))
+        fetchFirebaseItem(itemId)
+        .then(result => setItem(result))
         .catch(err => console.log(err))
-        .finally(() => setLoading(false));
+        .finally(() => setLoading(false))
+
     }, [itemId]);
     
     return (

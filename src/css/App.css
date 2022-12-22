@@ -8,7 +8,6 @@ body {
   background-color: #70b9c6; }
   body h1 {
     font-family: "Quicksand";
-    padding: 2rem;
     text-align: center; }
   body h2 {
     font-family: "Rubik";
@@ -76,9 +75,13 @@ header {
 .cartWidget {
   padding-right: 3rem;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  width: 7rem; }
   .cartWidget a {
-    color: #212529; }
+    color: #212529;
+    transition: 0.5s; }
+    .cartWidget a:hover {
+      color: #212529; }
   .cartWidget p {
     background-color: antiquewhite;
     border-radius: 15px;
@@ -93,7 +96,8 @@ header {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 2rem 5rem 2rem 5rem;
-  height: auto; }
+  height: auto;
+  row-gap: 2rem; }
 
 .item {
   background-color: white;
@@ -178,12 +182,21 @@ header {
   justify-content: center;
   align-items: center; }
 
-.cart {
+main .yourCart {
+  padding-top: 4rem; }
+
+main .cart {
   background-color: #f1f1f1;
   display: flex;
   justify-content: center;
   column-gap: 7rem; }
-  .cart .cartList {
+  main .cart .cartEmpty {
+    display: flex;
+    flex-direction: column; }
+    main .cart .cartEmpty button {
+      margin-top: 2rem;
+      width: 100%; }
+  main .cart .cartList {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
@@ -193,21 +206,21 @@ header {
     padding: 1rem;
     margin: 0;
     border-bottom: 1px solid silver; }
-    .cart .cartList img {
+    main .cart .cartList img {
       width: 4rem; }
-    .cart .cartList button {
+    main .cart .cartList button {
       border-radius: 15px;
       width: 1.5rem;
       height: 1.5rem;
       padding: 0;
       font-weight: bolder; }
-  .cart .cartTotal {
+  main .cart .cartTotal {
     padding-top: 2.5rem; }
-    .cart .cartTotal p {
+    main .cart .cartTotal p {
       text-align: start;
       padding-bottom: 0.5rem; }
-    .cart .cartTotal h2 {
+    main .cart .cartTotal h2 {
       border-bottom: 1px solid silver; }
-  .cart .btnClear {
+  main .cart .btnClear {
     margin-top: 2rem;
     background-color: #ee5d5d; }

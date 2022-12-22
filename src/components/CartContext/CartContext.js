@@ -6,22 +6,36 @@ const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
     const addToCart = (item, qty) => { // Añadir item al carrito //
-        let find = cartList.find(prod => prod.id === item.id);
-        if (find === undefined) {
-            setCartList([
-                ...cartList,
-                {
-                    id: item.id,
-                    title: item.title,
-                    pictureUrl: item.pictureUrl,
-                    price: item.price,
-                    qty: qty
-                }
-            ]);
-        } else {
-            find.qty += qty;
-            setCartList([...cartList]);
+        // let find = cartList.find(prod => prod.id === item.id);
+        if (isInCart(item.id)) {
+            const newCart = [...cartList];
+            for (const element of newCart){
+                if(element.id === item.id){
+                    element.qty += qty;
+            }
+            setCartList(newCart);
+            } 
+        } else{
+            setCartList([...cartList, {
+                id: item.id,
+                title: item.title,
+                picture: item.picture,
+                price: item.price,
+                qty: qty
+            }]);
         }
+    }
+
+    const calcItemsQty = () => { // Qty del CartWidget
+        let qtyTotal = 0;
+        cartList.map((i) => {
+            return qtyTotal = qtyTotal  +  i.qty
+        });
+        return qtyTotal;
+    }
+
+    const isInCart = (id) => {
+        return cartList.find((e) => e.id === id);
     }
 
     const itemTotal = (id) => { // Precio total por item //
@@ -32,7 +46,7 @@ const CartContextProvider = ({ children }) => {
     const subTotal = () => { // Subtotal del carrito //
         let total = 0;
         cartList.map((i) => {
-            total = total + i.price * i.qty
+            return total = total + i.price * i.qty
         });
         return total;
     }
@@ -56,7 +70,7 @@ const CartContextProvider = ({ children }) => {
         setCartList(arrayFilter);
     }   
     return (
-        <CartContext.Provider value={{cartList, addToCart, deleteItem, itemTotal, subTotal, taxes, cartTotal, removeList}}>
+        <CartContext.Provider value={{cartList, addToCart, deleteItem, itemTotal, subTotal, taxes, cartTotal, removeList, calcItemsQty}}>
             {children}
         </CartContext.Provider>
     );

@@ -7,7 +7,7 @@ const ItemList = (items) => {
             {items.datos.map(item => (
                 <Item
                 title={item.title}
-                pictureUrl={item.pictureUrl}
+                pictureUrl={item.picture}
                 price={item.price}
                 id={item.id}
                 key={item.id}/>

@@ -60,3 +60,51 @@ De no haber stock el click no debe tener efecto y por ende no ejecutar el callba
     * `addItem(item, quantity)` // agregar cierta cantidad de un ítem al carrito
     * `removeItem(itemId)` // Remover un item del cart por usando su id
     * `removeList()` // Remover todos los items
+
+### **🚨Actividad 6: Tecnicas de rendering🚨**
+* Expande tu componente Cart.js con el desglose de la compra y actualiza tu CartWidget.js para hacerlo reactivo al contexto.
+* Debe mostrar el desglose de tu carrito y el precio total.
+* Debe estar agregada la ruta ‘cart’ al BrowserRouter.
+* Debe mostrar todos los ítems agregados agrupados.
+* Por cada tipo de ítem, incluye un control para eliminar ítems.
+* De no haber ítems muestra un mensaje, de manera condicional, diciendo que no hay ítems y un react-router Link o un botón para que pueda volver al Landing (ItemDetailContainer.js) para buscar y comprar algo.
+* Ahora debe consumir el CartContext y mostrar en tiempo real (aparte del ícono) qué cantidad de ítems están agregados (2 camisas y 1 gorro equivaldrían a 3 items).
+* El cart widget no se debe mostrar más si no hay items en el carrito, aplicando la técnica que elijas (dismount, style, etc).
+* Cuando el estado interno de ItemDetail tenga la cantidad de ítems solicitados mostrar en su 
+lugar un botón que diga “Terminar mi compra”.
+* Ejemplo inicial del Cart:
+    ```javascript
+    const Cart = () => {
+        //accede al contexto con el hook useContext
+        return (
+            //recorre el estado global con un map y renderiza nombre del producto, cantidad de items agregados y precio por item.
+            //importe total por producto (para lo cual necesitarás agregar una función global en el contexto).
+        )
+    }
+    export default Cart;
+    ```
+* Ejemplo inicial del CartWidget:
+    ```javascript
+    const CartWidget = () => {
+    //accede al contexto con el hook useContext
+        const ctx = useContext(CartContext);
+
+        return (
+            <Badge badgeContent={ctx.calcItemsQty()} color="secondary">
+                <ShoppingCartOutlined />
+            </Badge>
+        );
+    }
+
+    export default CartWidget;
+    ``` 
+    * `calcItemsQty()` es una función global del contexto que retorna la cantidad de items en el carrito
+
+## **🚨Actividad 7: Firebase 1🚨**
+* Conecta tu nueva ItemCollection de google Firestore a tu ItemListContainer y ItemDetailContainer.
+* Conecta tu colección de firestore con el listado de ítems y con el detalle de ítem.
+* Elimina los async mocks (promises) y reemplazalos por los llamados de Firestore.
+* Si navegas a /item/:id, debe ocurrir una consulta de (1) documento. 
+* Si navegas al catálogo, debes consultar (N) documentos con un query filtrado, implementando la lógica de categorías y obteniendo el id de categoría del parámetro de react-router :categoryId.
+
+
