@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { CartContext } from '../CartContext/CartContext';
 import { Link } from 'react-router-dom';
-import { serverTimestamp, doc, setDoc, collection } from 'firebase/firestore';
+import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from 'firebase/firestore';
 import { db } from '../../utils/firebaseConfig'
 import Swal from 'sweetalert2';
 
@@ -34,10 +34,14 @@ const Cart = () => {
         .then(result => {
             Swal.fire({
                 title: 'Compra exitosa!',
-                text: `Tu pedido con id ${result.id} llegará a tu dirección en los próximos 2 días.`,
+                text: `¡Gracias ${order.buyer.name}!, tu pedido con id ${result.id} llegará a tu dirección en los próximos 2 días.`,
                 icon: 'success',
                 confirmButtonText: 'Volver a la tienda'
-              })
+              });
+            cartList.forEach(async(i) => {
+                const itemRef = doc(db, "Products", i.id);
+                await updateDoc (itemRef, {stock: increment(-i.qty)});
+            });
             removeList();
         })
         .catch(err => console.log(err))
@@ -45,19 +49,19 @@ const Cart = () => {
 
     return (
         <main>
-            <h1 className='yourCart'>Tu carrito</h1>
+            <h1>Carrito</h1>
             <div className='cart'>
                 <div> 
                     {
                         cartList.length === 0
                         ? <div className='cartEmpty'>
-                            <h1>esta vacío :(</h1>
+                            <h2>Tu carrito esta vacío :(</h2>
                             <Link to='/'><button>Ver productos</button></Link>
                             </div>
                         : cartList.map(i => 
                             <div className='cartList' key={i.id}>
                                 <img src={i.picture} alt={i.title}/>
-                                <h3>{i.title}</h3>
+                                <h4>{i.title}</h4>
                                 <p>x{i.qty}</p>
                                 <p>${itemTotal(i.id)}</p>
                                 <button onClick={() => deleteItem(i.id)}>x</button>
@@ -66,7 +70,10 @@ const Cart = () => {
                     } 
                     {
                         cartList.length > 0 &&
-                        <button className='btnClear' onClick={removeList}>Vaciar Carrito</button>
+                        <div className='divBtnCart'>
+                            <button className='btnClear' onClick={removeList}>Vaciar Carrito</button>
+                        <Link to="/"> <button className='btnShop'>Seguir comprando</button> </Link>
+                        </div>
                     }
                 </div>
                 {

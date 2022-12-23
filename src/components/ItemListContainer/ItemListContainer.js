@@ -18,6 +18,9 @@ const ItemListContainer = () => {
 
     return (
         <main>
+            {categoryId === undefined
+            ? <h1>Todos los productos</h1>
+            : <h1>{categoryId}</h1>}
             <div className="itemListContainer">
                 {loading ? <SpinnerB/> : <ItemList datos={datos}/>} 
             </div>

@@ -1,8 +1,23 @@
 #  💻Ecommerce React CoderHouse By: María Trinidad Quiroz 💻
-Este proyecto final se trata de un ecommerce de juguetes y accesorios para mascotas como perros y gatos 🐶🐱.
-## **Captura**
+Este proyecto se trata de un ecommerce de juguetes y accesorios para mascotas como perros y gatos 🐶🐱.
+### **Herramientas:**
+* JavaScript
+* React Js
+* HTML
+* CSS
+* SCSS
+### **Otros:**
+* Firebase
+* React-router-dom
+* React Bootstrap
+* React Toastify
+* Sweet Alert 2
+## **Capturas**
 ---
-![](/src/assets/Gif-funcionalidad.gif)
+![](/src/assets/GifFuncionalidad.gif)
+![](/src/assets/Screen1.png)
+![](/src/assets/Screen2.png)
+![](/src/assets/Screen3.png)
 
 ## **Desafíos y Pre-entregas**
 ---
@@ -128,6 +143,47 @@ lugar un botón que diga “Terminar mi compra”.
     };
     ```
 * Luego deberás crear una función que agregue ese objeto a un documento en una collección ORDERS.
+
+### **🥇Entrega del Proyecto Final🥇**
+* Desarrollarás una app de un e-commerce para poder vender productos de un rubro
+a elección.
+* User story/brief:
+    * Un usuario debe poder ingresar, navegar por los productos e ir a sus detalles.
+    * Desde el detalle se debe poder ver la descripción, foto y precio e ingresarlo al carrito.
+    * Una vez que el carrito tenga al menos un producto, se deberá visualizar un listado compacto de la orden con el precio total.
+    * Al ingresar su nombre, apellido, teléfono e e-mail (ingresándolo dos veces para
+    corroborar que sea correcto), debe activarse el botón de ‘realizar compra’.
+    * Al clickear ‘realizar compra’ debe guardarse en la base de datos una orden que tenga todos los productos, la fecha y dar feedback del número de orden.
+* Piezas sugeridas:
+    * NavBar
+    * CartWidget
+    * ItemListContainer
+    * ItemList
+    *ItemDetailContainer
+    * ItemDetail
+        * ItemQuantitySelector
+        * Description
+        * AddItemButton
+    * Checkout
+        * Brief (detalle de compra)
+* Requisitos base:
+    * **Inicio**: Al momento de ingresar a la app en la ruta base `‘/’`
+        * Visualizar -como mínimo- un set de productos disponibles para la compra.
+        * Contar con algún acceso visible a la vista de carrito que debe alojarse en el route `/cart`.
+        * Acceder a un menú desplegable que contendrá las categorías. Al clickear en una, debe navegar a la lista de productos de la misma mediante un route `/categories/:categoryId`. Éste invocará la misma vista que el home, pero visualizando sólamente productos de esa categoría.
+
+    * **Flow**: Al clickear un ítem del listado debe navegar a la ruta `/item/:id`, donde `id` es el id del item (generado por firebase), y ver la descripción del producto ( foto, precio, selector de cantidad). Si se ingresa a `/item/:id` y el producto no existe en firebase, debemos responder un mensaje adecuado que indique algo relacionado a que el producto no existe.
+    * **Firebase**: Implementar al menos dos colecciones:
+        * **items**: catálogo completo
+            * Link para foto (puede almacenarse de modo estático en la página en una subruta `/images/:itemid`.
+            * Precio unitario
+            * Descripción (sólo se ve en detalle)
+            * Categoria (id a mano para versión estática, o id de firebase para versión dinámica -opcional-)
+        * **orders**: las órdenes generadas, que deben incluir los productos, descripciones y los precios al momento de la compra.
+            * Las órdenes deben poder tener items surtidos, cada uno con su cantidad. Por ejemplo: remeras x 2 y gorra x 1
+            * id, items, fecha, estado ( por defecto en ‘generada’)
+        * **categories** (solo para versión dinámica -opcional-):
+            * Versión dinámica (-opcional-): Crear una colección de categories en firebase para hidratar el menú y usar los id’s de éstos para linkearlos a sus ítems. Idealmente, `categories/:id` debería tener una descripción {id: ‘ad43k348j’, key: ‘calzado’, description: ‘Calzado’} para que quede `/categories/calzado` en lugar de `/categories/ad43k348j`.
 
 
 

@@ -10,19 +10,30 @@ html {
 body h1 {
   font-family: "Quicksand";
   text-align: center;
-  margin: 0; }
+  margin: 0;
+  padding: 0.5rem;
+  background-color: #70b9c6;
+  font-size: 1.5rem; }
 
 body h2 {
   font-family: "Rubik";
   font-size: 1.3rem;
-  font-weight: bolder; }
+  font-weight: bolder;
+  text-align: center; }
 
 body h3 {
   font-family: "Rubik";
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-align: center;
   font-weight: bolder;
+  padding-bottom: 0.5rem;
   margin: 0; }
+
+body h4 {
+  font-family: "Rubik";
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: bolder; }
 
 body a {
   font-family: "Mali"; }
@@ -30,7 +41,8 @@ body a {
 body p {
   font-family: "Quicksand";
   text-align: center;
-  margin: 0; }
+  margin: 0;
+  font-size: 0.9rem; }
 
 body button {
   font-family: "Rubik";
@@ -46,20 +58,24 @@ body button {
     -webkit-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
     -moz-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22); }
 
+body .carousel-indicators, body .carousel-control-prev, body .carousel-control-next {
+  display: none; }
+
 main {
   background-color: #f1f1f1;
-  min-height: 100vh;
+  min-height: 80vh;
   height: 100%; }
 
 .spinner {
   position: absolute;
-  top: 50%;
+  top: 90%;
   align-self: center;
   justify-self: center; }
 
 header {
   background-color: #70b9c6;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   justify-items: center;
   align-items: center;
@@ -79,7 +95,6 @@ header {
         margin-left: 2rem;
         margin-right: 2rem;
         text-decoration: none;
-        position: relative;
         transition: 0.5s; }
         header .navBarContainer .navBar a:hover {
           color: white; }
@@ -98,7 +113,7 @@ header {
     background-color: antiquewhite;
     border-radius: 15px;
     width: 1.5rem;
-    height: 1.5rem;
+    height: 1.4rem;
     font-weight: 800; }
 
 .itemListContainer {
@@ -107,7 +122,7 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 8rem 5rem 8rem 5rem;
+  padding: 3rem 5rem 5rem 5rem;
   height: auto;
   row-gap: 2rem;
   height: 100%; }
@@ -121,6 +136,7 @@ header {
   display: grid;
   border-radius: 10px;
   justify-items: center;
+  height: auto;
   box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
   -webkit-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22);
   -moz-box-shadow: 1px 1px 16px 2px rgba(34, 35, 37, 0.22); }
@@ -158,9 +174,6 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly; }
-    .itemDetail .itemDetailDescription h3 {
-      font-size: 1.2rem;
-      padding-bottom: 0.5rem; }
 
 .itemCount {
   width: 15rem;
@@ -195,19 +208,17 @@ header {
   justify-content: center;
   align-items: center; }
 
-.yourCart {
-  padding-top: 4rem; }
-
 .cart {
   background-color: #f1f1f1;
   display: flex;
   justify-content: center;
-  column-gap: 7rem; }
+  column-gap: 7rem;
+  padding-top: 2rem; }
   .cart .cartEmpty {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    padding-top: 7rem; }
     .cart .cartEmpty button {
-      margin-top: 2rem;
       width: 100%; }
   .cart .cartList {
     display: grid;
@@ -236,15 +247,75 @@ header {
       border-bottom: 1px solid silver; }
     .cart .cartTotal button {
       margin-top: 1rem; }
-  .cart .btnClear {
-    margin-top: 2rem;
-    background-color: #ee5d5d; }
+  .cart .divBtnCart {
+    display: flex;
+    justify-content: space-between; }
+    .cart .divBtnCart .btnClear {
+      margin-top: 2rem;
+      background-color: #e2504c; }
+    .cart .divBtnCart .btnShop {
+      margin-top: 2rem;
+      background-color: #5dc460; }
 
 .footer {
   background-color: #70b9c6;
   padding: 2rem 1rem 2rem 1rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
   .footer img {
     width: 12rem; }
+  .footer p {
+    font-size: 0.8rem; }
+
+@media screen and (min-width: 1025px) and (max-width: 1328px) {
+  .cart .cartTotal {
+    padding: 3rem 0 0 0; }
+  .cart .cartList {
+    width: 30rem; } }
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  header {
+    display: grid;
+    grid-template-areas: "logo cart" "nav nav"; }
+    header .logoNavBar {
+      grid-area: logo;
+      padding: 0; }
+    header .navBarContainer {
+      grid-area: nav;
+      justify-self: flex-start; }
+      header .navBarContainer .navBar > a {
+        margin: 0.3rem; }
+      header .navBarContainer .navbar-toggler:focus {
+        box-shadow: none; }
+    header .cartWidget {
+      grid-area: cart;
+      padding-right: 0;
+      width: auto; }
+  .itemListContainer {
+    padding: 2rem 0 2rem 0; }
+  .footer {
+    justify-content: center; }
+    .footer p {
+      padding: 2rem 0 2rem 0; }
+  .itemDetail {
+    grid-template-columns: 1fr;
+    width: auto;
+    height: auto;
+    margin: 1rem; }
+    .itemDetail .itemDetailImg {
+      border: none; }
+      .itemDetail .itemDetailImg img {
+        width: 8rem; }
+  .cart {
+    flex-direction: column;
+    padding: 0.5rem; }
+    .cart .cartList {
+      width: auto; }
+      .cart .cartList img {
+        padding-right: 1rem; }
+    .cart .cartTotal {
+      display: flex;
+      flex-direction: column;
+      align-items: center; } }

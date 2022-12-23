@@ -7,7 +7,7 @@ const Footer = () => {
             <img src={Logo} alt="Logo"></img>
             <p>Proyecto creado por Maria Trinidad Quiroz, Diciembre 2022 <i className="fa-solid fa-heart fa-2xs"></i> </p>
             <div></div>
-            <ScrollToTop smooth />
+            <ScrollToTop smooth className='btnScrollUp' />
         </footer>
     )
 }

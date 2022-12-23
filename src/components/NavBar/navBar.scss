@@ -1,6 +1,7 @@
 header{
     background-color: #70b9c6;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     justify-items: center;
     align-items: center;
@@ -21,7 +22,6 @@ header{
                 background-color: #70b9c6;
                 margin-left: 2rem; margin-right: 2rem;
                 text-decoration: none;
-                position: relative;
                 transition: 0.5s;
                 &:hover{
                     color: white;

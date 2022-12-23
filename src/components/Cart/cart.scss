@@ -1,17 +1,15 @@
-.yourCart{
-    padding-top: 4rem;
-}
 .cart{
     background-color: rgb(241, 241, 241);
     display: flex;
     justify-content: center; 
     column-gap: 7rem;
+    padding-top: 2rem;
     .cartEmpty{
         display: flex;
         flex-direction: column;
+        padding-top: 7rem;
         button{
-        margin-top: 2rem;
-        width: 100%;
+            width: 100%;
         }
     }
     .cartList{
@@ -45,8 +43,16 @@
             margin-top: 1rem;
         }
     }
-    .btnClear{
-        margin-top: 2rem;
-        background-color: rgb(238, 93, 93);
+    .divBtnCart{
+        display: flex;
+        justify-content: space-between;
+        .btnClear{
+            margin-top: 2rem;
+            background-color: #e2504c;
+        }
+        .btnShop{
+            margin-top: 2rem;
+            background-color: #5dc460;
+        }
     }
 }

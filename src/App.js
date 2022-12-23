@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart';
 import CartContextProvider from './components/CartContext/CartContext';
 import Footer from './components/Footer/Footer';
+import CarouselFade from './components/Carousel/CarouselFade';
 
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
     <CartContextProvider>
       <BrowserRouter>
         <NavBar/>
+        <CarouselFade/>
         <Routes>
           <Route path='/' element={<ItemListContainer/>} />
           <Route path='/category/:categoryId' element={<ItemListContainer/>} />
