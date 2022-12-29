@@ -21,7 +21,7 @@ const ItemDetail = (item) => {
 
     return (
         <div className="itemDetail">
-            <div className="itemDetailImg">
+            <div className="itemDetailImg animate__animated animate__fadeIn">
                 <img src={item.picture} alt={item.title}/>
             </div>
             <div className="itemDetailDescription">
